@@ -116,10 +116,10 @@ def dict_to_tf_example(data,
   width = int(data['size']['width'])
   height = int(data['size']['height'])
 
-  xmins = []
-  ymins = []
-  xmaxs = []
-  ymaxs = []
+  #xmins = []
+  #ymins = []
+  #xmaxs = []
+  #ymaxs = []
   classes = []
   classes_text = []
   truncated = []
@@ -155,10 +155,10 @@ def dict_to_tf_example(data,
       'image/key/sha256': dataset_util.bytes_feature(key.encode('utf8')),
       'image/encoded': dataset_util.bytes_feature(encoded_jpg),
       'image/format': dataset_util.bytes_feature('jpeg'.encode('utf8')),
-      'image/object/bbox/xmin': dataset_util.float_list_feature(xmins),
-      'image/object/bbox/xmax': dataset_util.float_list_feature(xmaxs),
-      'image/object/bbox/ymin': dataset_util.float_list_feature(ymins),
-      'image/object/bbox/ymax': dataset_util.float_list_feature(ymaxs),
+      #'image/object/bbox/xmin': dataset_util.float_list_feature(xmins),
+      #'image/object/bbox/xmax': dataset_util.float_list_feature(xmaxs),
+      #'image/object/bbox/ymin': dataset_util.float_list_feature(ymins),
+      #'image/object/bbox/ymax': dataset_util.float_list_feature(ymaxs),
       'image/object/class/text': dataset_util.bytes_list_feature(classes_text),
       'image/object/class/label': dataset_util.int64_list_feature(classes),
       'image/object/difficult': dataset_util.int64_list_feature(difficult_obj),
